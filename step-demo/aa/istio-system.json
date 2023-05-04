@@ -1,0 +1,181 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "openshift.io/description": "",
+            "openshift.io/display-name": "",
+            "openshift.io/requester": "kube:admin",
+            "openshift.io/sa.scc.mcs": "s0:c26,c15",
+            "openshift.io/sa.scc.supplemental-groups": "1000680000/10000",
+            "openshift.io/sa.scc.uid-range": "1000680000/10000"
+        },
+        "creationTimestamp": "2023-04-06T14:19:13Z",
+        "deletionTimestamp": "2023-04-06T22:28:23Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "ns1",
+            "pod-security.kubernetes.io/audit": "restricted",
+            "pod-security.kubernetes.io/audit-version": "v1.24",
+            "pod-security.kubernetes.io/warn": "restricted",
+            "pod-security.kubernetes.io/warn-version": "v1.24"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:openshift.io/description": {},
+                            "f:openshift.io/display-name": {},
+                            "f:openshift.io/requester": {}
+                        },
+                        "f:labels": {
+                            ".": {},
+                            "f:kubernetes.io/metadata.name": {}
+                        }
+                    }
+                },
+                "manager": "openshift-apiserver",
+                "operation": "Update",
+                "time": "2023-04-06T14:19:13Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:spec": {
+                        "f:finalizers": {}
+                    }
+                },
+                "manager": "openshift-controller-manager",
+                "operation": "Update",
+                "subresource": "finalize",
+                "time": "2023-04-06T14:19:13Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            "f:openshift.io/sa.scc.mcs": {},
+                            "f:openshift.io/sa.scc.supplemental-groups": {},
+                            "f:openshift.io/sa.scc.uid-range": {}
+                        },
+                        "f:labels": {
+                            "f:pod-security.kubernetes.io/audit": {},
+                            "f:pod-security.kubernetes.io/audit-version": {},
+                            "f:pod-security.kubernetes.io/warn": {},
+                            "f:pod-security.kubernetes.io/warn-version": {}
+                        }
+                    }
+                },
+                "manager": "cluster-policy-controller",
+                "operation": "Update",
+                "time": "2023-04-06T22:13:04Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:conditions": {
+                            ".": {},
+                            "k:{\"type\":\"NamespaceContentRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionContentFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionDiscoveryFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionGroupVersionParsingFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceFinalizersRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            }
+                        }
+                    }
+                },
+                "manager": "kube-controller-manager",
+                "operation": "Update",
+                "subresource": "status",
+                "time": "2023-04-06T22:28:29Z"
+            }
+        ],
+        "name": "ns1",
+        "resourceVersion": "450292",
+        "uid": "72a89ddf-45dd-4af3-8a72-a76e931e7bf2"
+    },
+    "spec": {
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2023-04-06T22:28:29Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2023-04-06T22:28:29Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2023-04-06T22:28:29Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2023-04-06T22:28:29Z",
+                "message": "Some resources are remaining: redisenterpriseremoteclusters.app.redislabs.com has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2023-04-06T22:28:29Z",
+                "message": "Some content in the namespace has finalizers remaining: redis.io/rerc-finalizer in 1 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}

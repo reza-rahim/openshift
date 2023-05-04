@@ -1,0 +1,14 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseRemoteCluster
+metadata:
+  name: rerc1
+spec:
+  recName: rec1
+  recNamespace: ns1
+  apiFqdnUrl: api-rec1-ns1.apps.demo-1.ps-redis.com
+  dbFqdnSuffix: cluster-rec1-ns1.apps.demo-1.ps-redis.com
+  secretName: redis-enterprise-rerc1
+activeActive:
+  apiIngressUrl: api.apps.demo-1.ps-redis.com
+  dbIngressSuffix: -cluster.demo-1.ps-redis.com
+  method: openShiftRoute

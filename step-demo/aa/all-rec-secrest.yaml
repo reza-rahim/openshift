@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  password: WmNaWlNFT3M=
+  username: ZGVtb0ByZWRpc2xhYnMuY29t
+kind: Secret
+metadata:
+  name: redis-enterprise-rerc1
+type: Opaque
+
+---
+
+apiVersion: v1
+data:
+  password: UXBtc2RMMzE=
+  username: ZGVtb0ByZWRpc2xhYnMuY29t
+kind: Secret
+metadata:
+  name: redis-enterprise-rerc2
+type: Opaque
+
+---

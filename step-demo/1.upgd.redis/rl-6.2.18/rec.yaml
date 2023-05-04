@@ -1,0 +1,19 @@
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: rec
+spec:
+  # Add fields here
+  nodes: 3
+  redisEnterpriseNodeResources:
+    limits:
+      cpu: 1000m
+      memory: 2Gi
+    requests:
+      cpu: 1000m
+      memory: 2Gi
+  redisEnterpriseImageSpec:
+    imagePullPolicy:  IfNotPresent
+    repository:       redislabs/redis
+    versionTag:       6.2.18-72.rhel8-openshift
+

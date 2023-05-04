@@ -1,0 +1,6 @@
+oc adm cordon <node>
+
+oc adm drain  --delete-local-data --ignore-daemonsets  <node>
+
+ oc adm  uncordon <node>
+

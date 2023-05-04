@@ -1,0 +1,13 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseActiveActiveDatabase
+metadata:
+  name: test-aadb
+spec:
+  globalConfigurations:
+    databaseSecretName: test-aadb-secret
+    memorySize: 200MB
+    shardCount: 1
+  participatingClusters:
+      - name: rerc1
+      - name: rerc2
+

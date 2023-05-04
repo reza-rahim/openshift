@@ -1,0 +1,20 @@
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: rec01
+  labels:
+    app: redis-enterprise
+spec:
+  # Add fields here
+  nodes: 3
+  redisEnterpriseImageSpec:
+    repository: registry.connect.redhat.com/redislabs/redis-enterprise
+    versionTag: 6.4.2-43.rhel8-openshift
+  redisEnterpriseServicesRiggerImageSpec:
+    repository: registry.connect.redhat.com/redislabs/services-manager
+  bootstrapperImageSpec:
+    repository: registry.connect.redhat.com/redislabs/redis-enterprise-operator
+  activeActive:
+    apiIngressUrl: api.apps.demo-1.ps-redis.com
+    dbIngressSuffix: -cluster.demo-1.ps-redis.com
+    method: openShiftRoute
