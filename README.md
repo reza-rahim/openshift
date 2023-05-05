@@ -4,6 +4,12 @@
   - https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-1-prerequisites-63f065e8a729
 
 
+##### How to get install for ocp version
+  - https://mirror.openshift.com/pub/openshift-v4/clients/ocp/
+
+####
+  - https://access.redhat.com/documentation/en-us/openshift_container_platform/
+
 ```
 ./openshift-install create install-config --dir demo-3
 cp install-config.yaml dem0-3/
