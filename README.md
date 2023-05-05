@@ -23,4 +23,7 @@ cat demo-3/auth/kubeadmin-password
 oc new-project redis
 oc apply -f config/scc.yaml
 oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:redis:rec
+
+
+export KUBECONFIG=
 ```
