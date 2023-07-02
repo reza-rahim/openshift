@@ -1,0 +1,21 @@
+server:
+  standalone:
+    config: |
+      ui = true
+      global.openshift = true
+      server.dev.enabled = true 
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "file" {
+        path = "/vault/data"
+      }
+      plugin_directory = "/usr/local/libexec/vault"
+  volumes:
+    - name: plugins
+      emptyDir: {}
+  volumeMounts:
+    - mountPath: /usr/local/libexec/vault
+      name: plugins
