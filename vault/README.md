@@ -19,8 +19,8 @@ vault write sys/plugins/catalog/database/redisenterprise-database-plugin command
 vault secrets enable database
 
 
-vault write database/config/redis-rec-mydb plugin_name="redisenterprise-database-plugin" url="https://mydb.redis.svc.cluster.local:9443" allowed_roles="*" database=mydb username=demo@redis.com password=PVcYQE6F
-
+vault write database/config/redis-rec-mydb plugin_name="redisenterprise-database-plugin" url="https://rec.redis.svc.cluster.local:9443" allowed_roles="*" database=mydb username=demo@redis.com password=PVcYQE6F
+vault write database/roles/mydb db_name=redis-rec-mydb creation_statements="{\"role\":\"DB Member\"}" default_ttl=3m max_ttl=10m
 
 ## get in the vault pod
 
