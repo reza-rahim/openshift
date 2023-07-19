@@ -1,0 +1,32 @@
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: rec
+  namespace: redis
+spec:
+  bootstrapperImageSpec:
+    repository: registry.connect.redhat.com/redislabs/redis-enterprise-operator
+  persistentSpec:
+    enabled: true
+  redisEnterpriseImageSpec:
+    imagePullPolicy: IfNotPresent
+    repository: registry.connect.redhat.com/redislabs/redis-enterprise
+  redisEnterpriseServicesRiggerImageSpec:
+    repository: registry.connect.redhat.com/redislabs/services-manager
+  nodes: 3
+  uiServiceType: ClusterIP
+  sideContainersSpec: 
+  - name: logger-sidecar 
+    imagePullPolicy: IfNotPresent
+    args:
+       - /bin/sh
+       - 'c'
+       - tail -n+1 -f /var/opt/redislabs/log/*.log
+    image: ubi8/ubi-minimal      
+    volumeMounts:  
+     - mountPath:  /var/opt/redislabs/log
+       name: redis-enterprise-storage
+       readOnly: true
+       subPath: logs
+
+
