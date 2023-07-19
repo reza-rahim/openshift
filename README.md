@@ -11,6 +11,8 @@
   - https://access.redhat.com/documentation/en-us/openshift_container_platform/
 
 ```
+export GOOGLE_APPLICATION_CREDENTIALS=/root/redislabs-sa-training-services-039940d51d47.json
+
 ./openshift-install create install-config --dir demo-3
 cp install-config.yaml dem0-3/
 ./openshift-install create cluster --dir demo-3
