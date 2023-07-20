@@ -20,13 +20,11 @@ spec:
     imagePullPolicy: IfNotPresent
     args:
        - /bin/sh
-       - 'c'
-       - tail -n+1 -f /var/opt/redislabs/log/*.log
-    image: ubi8/ubi-minimal      
+       - '-c'
+       - 'while sleep 10; do tail -n+1 -f /var/opt/redislabs/log/*.log; done'
+    image: redhat/ubi8-minimal     
     volumeMounts:  
-     - mountPath:  /var/opt/redislabs/log
-       name: redis-enterprise-storage
-       readOnly: true
-       subPath: logs
-
+       - name: redis-enterprise-storage
+         mountPath: /var/opt/redislabs/log
+         subPath: logs
 
