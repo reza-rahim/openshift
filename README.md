@@ -28,4 +28,12 @@ oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:redis:r
 
 
 export KUBECONFIG=
+
+
+oc patch -n redis rec/rec --type=merge -p '{"metadata": {"finalizers":null}}'
+
+oc adm node-logs  demo-3-btnlq-worker-a-658m7 -u kubelet 
+
+oc delete po rec-0 --grace-period=0 --force  
+
 ```
