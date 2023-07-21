@@ -21,7 +21,7 @@ spec:
     args:
        - /bin/sh
        - '-c'
-       - 'while sleep 10; do tail -n+1 -f /var/opt/redislabs/log/*.log; done'
+       - tail -n+1 -f  /var/opt/redislabs/log/*.log
     image: redhat/ubi8-minimal     
     volumeMounts:  
        - name: redis-enterprise-storage
