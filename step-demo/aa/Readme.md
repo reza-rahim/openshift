@@ -1,4 +1,5 @@
 ### cluster 1
+
 ```
 export KUBECONFIG=/root/demo-1/auth/kubeconfig 
 oc new-project ns1
