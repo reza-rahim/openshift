@@ -5,6 +5,8 @@
 
 
 ##### How to get install for ocp version
+
+  - https://console.redhat.com/openshift/install/gcp/user-provisioned
   - https://mirror.openshift.com/pub/openshift-v4/clients/ocp/
 
 ####
